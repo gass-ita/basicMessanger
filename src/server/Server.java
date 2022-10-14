@@ -28,7 +28,7 @@ public class Server {
                 client = listener.accept();
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 out = new PrintWriter(client.getOutputStream(), true);
-                System.out.println("[SERVER] connected to the client");
+                System.out.println("[SERVER] connected to the client " + client.getRemoteSocketAddress());
                 out.println("connected");
                 ServerListener clientThread = new ServerListener(client); 
                 clients.add(clientThread);

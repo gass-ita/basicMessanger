@@ -19,7 +19,7 @@ public class ServerListener implements Runnable{
 
     @Override
     public void run() {
-        while(true){
+        while(!client.isClosed()){
             try {
                 System.out.println(in.readLine());
             } catch (IOException e) {
